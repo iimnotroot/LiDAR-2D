@@ -19,7 +19,7 @@ void points_to_buff(Lidar::CircularBuffer<Lidar::PolarPoint, BUFFER_CAP> &buffer
     while (true) {
         if (last_idx >= MAX_POINTS) { break; }
         buffer.push(polarPoints[last_idx]);
-        std::cout << "Polar Point added to Circular Buffer! " << last_idx << " p: " << polarPoints[last_idx].p << " angle: " << polarPoints[last_idx].angle << " \n";
+        std::cout << "Polar Point added to Circular Buffer! " << last_idx + 1 << " p: " << polarPoints[last_idx].p << " angle: " << polarPoints[last_idx].angle << " \n";
         last_idx += 1;
     }
 
