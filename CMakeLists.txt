@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 
 project(LiDAR2D)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -22,9 +23,11 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(LidarSim
     src/LidarSim.cpp
+    src/LidarUtils.cpp
 )
 
 target_include_directories(LidarSim PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
@@ -38,6 +41,7 @@ add_executable(LidarTests
 )
 
 target_include_directories(LidarTests PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 

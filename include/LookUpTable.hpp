@@ -25,7 +25,7 @@ class LookUpTable {
             }
 
 
-            size_t index = static_cast<size_t>(norm_deg * DEG_TO_INDEX);
+            size_t index = static_cast<size_t>(std::roundf(norm_deg * DEG_TO_INDEX));
             return index % ResolutionSteps;
         }
 
